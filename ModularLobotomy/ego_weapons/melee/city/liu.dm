@@ -58,6 +58,11 @@
 							)
 	swingstyle = WEAPONSWING_SMALLSWEEP
 
+//Both this and line 247 enable their respective weapons to light cigarettes.
+/obj/item/ego_weapon/city/liu/fire/fist/ignition_effect(atom/A, mob/user)
+	span_notice("Striking [user.p_their()] thumb against the inside of [user.p_their()] palm like a match, [user] lights [A] with [src] just before the flame flickers away. Goddamn.")
+	return
+
 /obj/item/ego_weapon/city/liu/fire/spear
 	name = "liu spear"
 	desc = "A spear used by veteran fixers of Liu Section 1 and Section 2, and is used by the director of Liu Section 2."
@@ -239,6 +244,9 @@
 		dodgelanding = locate(user.x + 2, user.y, user.z)
 	user.throw_at(dodgelanding, 3, 2, spin = FALSE)
 
+/obj/item/ego_weapon/city/liu/fire/fist/ignition_effect(atom/A, mob/user)
+	span_notice("Striking [user.p_their()] thumb against the inside of [user.p_their()] palm like a match, [user] lights [A] with [src] just before the flame flickers away. Goddamn.")
+	return
 
 /obj/item/ego_weapon/city/liu/fist/vet
 	name = "liu veteran combat gloves"
